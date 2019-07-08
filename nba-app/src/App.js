@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import LandingPage from './views/LandingPage';
+import Main from './views/Main';
+import PlayerStats from './views/PlayerStats';
+import TeamStats from './views/TeamStats';
+import GameStats from './views/GameStats';
+import NotFound from './views/NotFound';
+
+import {
+  HashRouter as Router,
+  Route,
+  Link,
+  Switch,
+  NavLink,
+} from "react-router-dom";
+import Navigation from './components/Navigation';
+
+
+class App extends Component {
+  render() {
+    return (
+      <>
+        <h1>Aplikacja z react router</h1>
+        <Router>
+          <Switch>
+            <Route exact path='/' component={LandingPage} />
+            <Route exact path='/main' component={Main} />
+            <Route exact path='/player' component={PlayerStats} />
+            <Route exact path='/team' component={TeamStats} />
+            <Route exact path='/game' component={GameStats} />
+            <Route component={NotFound} />
+          </Switch>
+        </Router>
+      </>
+    );
+  }
 }
+
+
 
 export default App;
