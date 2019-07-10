@@ -11,10 +11,10 @@ class LandingPage extends Component {
     }
     render() {
         return (
-            <>
-                <Input placeholder='Type name of some player e.g. Lebron James' />
+            <div className='LandingPage'>
+                <Input className='LandingPage-input' placeholder='Type name of some player e.g. Lebron James' />
                 <Button buttonText='Search for player' />
-            </>
+            </div>
         );
     }
 }

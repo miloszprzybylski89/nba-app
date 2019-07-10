@@ -15,14 +15,12 @@ import {
   Switch,
   NavLink,
 } from "react-router-dom";
-import Navigation from './components/Navigation';
 
 
 class App extends Component {
   render() {
     return (
-      <>
-        <h1>Aplikacja z react router</h1>
+      <div className='App'>
         <Router>
           <Switch>
             <Route exact path='/' component={LandingPage} />
@@ -33,7 +31,7 @@ class App extends Component {
             <Route component={NotFound} />
           </Switch>
         </Router>
-      </>
+      </div>
     );
   }
 }

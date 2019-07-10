@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from '../components/Header';
 
 class GameStats extends Component {
     constructor(props) {
@@ -8,7 +9,12 @@ class GameStats extends Component {
         }
     }
     render() {
-        return (<h1>Game Stats Page</h1>);
+        return (
+            <>
+                <Header />
+                <h1>Game Stats Page</h1>
+            </>
+        );
     }
 }
 

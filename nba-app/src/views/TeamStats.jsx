@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import Header from '../components/Header';
 
 class TeamStats extends Component {
     render() {
-        return (<div>Team Stats page</div>);
+        return (
+            <>
+                <Header />
+                <h1>Team Stats page</h1>
+            </>
+        );
     }
 }
 

@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import Header from '../components/Header';
 
 class PlayerStats extends Component {
     render() {
-        return (<div>Player stats page</div>);
+        return (
+            <>
+                <Header />
+                <h1>Player stats page</h1>
+            </>
+        );
     }
 }
 
