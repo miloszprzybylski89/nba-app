@@ -11,16 +11,15 @@ import NotFound from './views/NotFound';
 import {
   HashRouter as Router,
   Route,
-  Link,
   Switch,
-  NavLink,
 } from "react-router-dom";
+
 
 
 class App extends Component {
   render() {
     return (
-      <div className='App'>
+      <div className='App' >
         <Router>
           <Switch>
             <Route exact path='/' component={LandingPage} />
