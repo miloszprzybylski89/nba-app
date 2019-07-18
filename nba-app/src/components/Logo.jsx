@@ -9,7 +9,7 @@ class Logo extends Component {
     }
     render() {
         return (
-            <span><strong>NBA</strong> stats app</span>
+            <span className='logo'><strong>NBA</strong> stats app</span>
         );
     }
 }

@@ -4,7 +4,7 @@ class Input extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            playerName: '',
+            value: '',
 
             placeholder: this.props.placeholder,
 
@@ -12,12 +12,12 @@ class Input extends Component {
     }
 
     handleChange = (e) => {
-        this.setState({ playerName: e.target.value })
+        this.setState({ value: e.target.value })
 
     }
 
     render() {
-        return (<input placeholder={this.state.placeholder} onChange={this.handleChange} value={this.state.playerName} />);
+        return (<input className={this.props.className} placeholder={this.state.placeholder} onChange={this.handleChange} value={this.state.value} />);
     }
 }
 
