@@ -11,12 +11,12 @@ class Navigation extends Component {
     }
     render() {
         return (
-            <nav>
-                <ul>
-                    <li><NavLink exact to='./main'>Main</NavLink></li>
-                    <li><NavLink exact to='./player'>Player</NavLink></li>
-                    <li><NavLink exact to='./team'>Team</NavLink></li>
-                    <li><NavLink exact to='./game'>Game</NavLink></li>
+            <nav className='navigation'>
+                <ul className='navigation__list'>
+                    <li className='navigation__list-element'><NavLink className='anchor' exact to='./main'>Main</NavLink></li>
+                    <li className='navigation__list-element'><NavLink className='anchor' exact to='./player'>Player</NavLink></li>
+                    <li className='navigation__list-element'><NavLink className='anchor' exact to='./team'>Team</NavLink></li>
+                    <li className='navigation__list-element'><NavLink className='anchor' exact to='./game'>Game</NavLink></li>
                 </ul>
             </nav>
         );

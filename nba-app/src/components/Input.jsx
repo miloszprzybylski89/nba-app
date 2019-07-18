@@ -11,13 +11,19 @@ class Input extends Component {
         }
     }
 
+    componentDidMount() {
+        this.setState({ value: 'whatever' })
+    }
+
     handleChange = (e) => {
-        this.setState({ value: e.target.value })
+        console.log(e.target.name);
+
+        this.setState({ [e.target.name]: e.target.value })
 
     }
 
     render() {
-        return (<input className={this.props.className} placeholder={this.state.placeholder} onChange={this.handleChange} value={this.state.value} />);
+        return (<input className={this.props.className} placeholder={this.state.placeholder} onChange={this.handleChange} name={this.props.name} />);
     }
 }
 

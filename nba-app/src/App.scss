@@ -2,6 +2,7 @@
 @import "./scss/slider.scss";
 
 .App {
+  background-color: black;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -14,6 +15,33 @@
   margin: auto;
 }
 
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo {
+  font-size: 2em;
   color: white;
+  margin-left: 1em;
+}
+
+.navigation {
+  &__list {
+    &-element {
+      font-size: 1.5em;
+      display: inline;
+      margin-left: 1em;
+
+      & .anchor {
+        text-decoration: none;
+        color: white;
+      }
+      &:last-of-type {
+        margin-right: 1em;
+      }
+    }
+  }
 }
