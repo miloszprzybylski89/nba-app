@@ -1,0 +1,18 @@
+.teams {
+  background-image: url("./assets/images/background/teamsList.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &List {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    &__element {
+      text-align: center;
+      width: 25vw;
+    }
+  }
+}
