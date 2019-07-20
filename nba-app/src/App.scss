@@ -1,4 +1,5 @@
 @import "./scss/landingPage.scss";
+@import "./scss/teamStats.scss";
 @import "./scss/slider.scss";
 
 .App {
@@ -10,13 +11,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   margin: auto;
   color: white;
 }
 
 .header {
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   display: flex;
   justify-content: space-between;
