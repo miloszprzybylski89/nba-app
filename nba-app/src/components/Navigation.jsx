@@ -15,7 +15,7 @@ class Navigation extends Component {
                 <ul className='navigation__list'>
                     <li className='navigation__list-element'><NavLink className='anchor' exact to='./main'>Main</NavLink></li>
                     <li className='navigation__list-element'><NavLink className='anchor' exact to='./player'>Player</NavLink></li>
-                    <li className='navigation__list-element'><NavLink className='anchor' exact to='./team'>Team</NavLink></li>
+                    <li className='navigation__list-element'><NavLink className='anchor' exact to='./teams'>Team</NavLink></li>
                     <li className='navigation__list-element'><NavLink className='anchor' exact to='./game'>Game</NavLink></li>
                 </ul>
             </nav>

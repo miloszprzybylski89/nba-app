@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import Header from '../components/Header';
-import { teamsBackground } from '../assets/images/background/teamsList.jpg'
+import Footer from '../components/Footer';
+import { } from "react-router-dom";
 
 const API = 'https://www.balldontlie.io/api/v1/teams'
 
@@ -19,12 +20,18 @@ class TeamStats extends Component {
         axios.get(API)
             .then(resp => resp.data)
             .then(json => this.setState({ data: json.data }))
-            .then(() => { this.setState({ isLoading: false }) })
+            .then(() => this.setState({ isLoading: false }))
+    }
+
+    handleChosenTeam = (id) => {
+        this.props.history.replace({
+            pathname: './team',
+            state: { id: id }
+        })
     }
 
     render() {
         const { isLoading, data } = this.state;
-        console.log(this.state.data);
         if (isLoading) {
             return null;
         }
@@ -33,14 +40,15 @@ class TeamStats extends Component {
             <div className='teams'>
                 <Header />
                 <ul className='teamsList'>
-                    {data.map(e => (
+                    {data.map(elem => (
                         <li
-                            key={e.id}
-                            index={e.id}
-                            className='teamsList__element' ><h1> {e.full_name}</h1> </li>
+                            onClick={() => this.handleChosenTeam(elem.id)}
+                            key={elem.id}
+                            index={elem.id}
+                            className='teamsList__element' ><h2> {elem.full_name}</h2> </li>
                     ))}
                 </ul>
-                <h1>Team Stats page</h1>
+                <Footer />
 
             </div>
         );

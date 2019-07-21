@@ -10,19 +10,6 @@ class Input extends Component {
         };
     };
 
-    componentDidMount() {
-        this.timer = setTimeout(() => {
-            this.setState({
-                player: 'Lebron James',
-                team: 'Los Angeles Lakers',
-            });
-
-        }, 2000);
-    };
-
-    componentWillUnmount() {
-        clearTimeout(this.timer);
-    }
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });

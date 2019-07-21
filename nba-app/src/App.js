@@ -4,9 +4,11 @@ import './App.scss';
 import LandingPage from './views/LandingPage';
 import Main from './views/Main';
 import PlayerStats from './views/PlayerStats';
-import TeamStats from './views/TeamStats';
+import Teams from './views/Teams';
 import GameStats from './views/GameStats';
+import TeamInfo from './views/TeamInfo';
 import NotFound from './views/NotFound';
+
 
 import {
   HashRouter as Router,
@@ -25,8 +27,9 @@ class App extends Component {
             <Route exact path='/' component={LandingPage} />
             <Route exact path='/main' component={Main} />
             <Route exact path='/player' component={PlayerStats} />
-            <Route exact path='/team' component={TeamStats} />
+            <Route exact path='/teams' component={Teams} />
             <Route exact path='/game' component={GameStats} />
+            <Route exact path='/team' component={TeamInfo} />
             <Route component={NotFound} />
           </Switch>
         </Router>

@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import Button from "../components/Button";
 import Input from '../components/Input';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 import Slider from "react-animated-slider";
 
@@ -69,6 +70,7 @@ class LandingPage extends Component {
                     ))}
 
                 </Slider>
+                <Footer />
             </>
         );
     }
