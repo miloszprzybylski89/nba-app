@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'antd/dist/antd.css';
 import './App.scss';
 
 import LandingPage from './views/LandingPage';
@@ -15,6 +16,7 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
+
 
 
 

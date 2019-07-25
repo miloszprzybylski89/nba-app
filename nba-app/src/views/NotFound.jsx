@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 class NotFound extends Component {
 
     render() {
-        return (<h1>UPS!!</h1>);
+        return (
+            <div>
+                <Header />
+                <span className='error'>UPS!!</span>
+                <Footer />
+            </div>
+        )
     }
 }
 

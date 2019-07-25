@@ -17,6 +17,11 @@
   color: white;
 }
 
+.error {
+  font-size: 3em;
+  color: white;
+}
+
 .header,
 .footer {
   z-index: 1;
@@ -35,10 +40,19 @@
 }
 
 .navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
   &__list {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
     &-element {
+      display: flex;
       font-size: 1.5em;
-      display: inline;
       margin-left: 1em;
 
       & .anchor {

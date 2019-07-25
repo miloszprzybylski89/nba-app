@@ -21,11 +21,13 @@ class TeamStats extends Component {
             .then(resp => resp.data)
             .then(json => this.setState({ data: json.data }))
             .then(() => this.setState({ isLoading: false }))
+
+
     }
 
     handleChosenTeam = (id) => {
-        this.props.history.replace({
-            pathname: './team',
+        this.props.history.push({
+            pathname: '/team',
             state: { id: id }
         })
     }
@@ -33,7 +35,14 @@ class TeamStats extends Component {
     render() {
         const { isLoading, data } = this.state;
         if (isLoading) {
-            return null;
+            return (
+                <div className='teams'>
+                    <Header />
+
+                    <Footer />
+
+                </div>
+            );
         }
 
         return (
@@ -45,7 +54,7 @@ class TeamStats extends Component {
                             onClick={() => this.handleChosenTeam(elem.id)}
                             key={elem.id}
                             index={elem.id}
-                            className='teamsList__element' ><h2> {elem.full_name}</h2> </li>
+                            className='teamsList__element' ><span> {elem.full_name}</span> </li>
                     ))}
                 </ul>
                 <Footer />

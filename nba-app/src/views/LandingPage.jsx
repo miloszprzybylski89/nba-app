@@ -30,9 +30,11 @@ class LandingPage extends Component {
                     placeholder: `Type name of some team e.g. Los Angeles Lakers`,
                     buttonText: 'Search for team',
                     background: `url('${lakersBg}')`,
-                    inputName: 'team',
+                    inputName: 'teams',
                 },
-            ]
+            ],
+            player: '',
+            teams: '',
 
         }
     }
@@ -42,13 +44,37 @@ class LandingPage extends Component {
         this.setState({ redirect: true, redirectId: parseFloat(e.target.id) })
     }
 
+    handleInputChange = (e) => {
+        console.log(e.target.name, e.target.value);
+
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
     render() {
-        const { redirect, redirectId, landingPageOptions } = this.state;
+        const { redirect, redirectId, teams, player, landingPageOptions } = this.state;
 
         if (redirect && redirectId === 1) {
-            return <Redirect to='./player' />
+            if (player !== '') {
+                return <Redirect to={{
+                    pathname: './player',
+                    state: { searchQuery: this.state.teams }
+                }}
+                />
+            }
+            return <Redirect to={{
+                pathname: './adsf',
+            }} />
         } else if (redirect && redirectId === 2) {
-            return <Redirect to='./team' />
+            if (teams !== '') {
+                return <Redirect to={{
+                    pathname: './team',
+                    state: { searchQuery: this.state.teams }
+                }}
+                />
+            }
+            return <Redirect to={{
+                pathname: './teams',
+            }} />
         }
 
         return (
@@ -62,8 +88,15 @@ class LandingPage extends Component {
                     {landingPageOptions.map((e) => (
                         <div key={e.id} className='landingPage slide' style={{ backgroundImage: e.background }} >
                             <form id={e.id} className='landingPage__form' onSubmit={this.handleSubmit}>
-                                <Input className='landingPage__form-input' name={e.inputName} placeholder={e.placeholder} />
-                                <Button className='landingPage__form-button' buttonText={e.buttonText} />
+                                <Input
+                                    className='landingPage__form-input'
+                                    changeParentInput={this.handleInputChange}
+                                    name={e.inputName}
+                                    value={this.state.inputValue}
+                                    placeholder={e.placeholder} />
+                                <Button
+                                    className='landingPage__form-button'
+                                    buttonText={e.buttonText} />
                             </form>
                         </div>
 
