@@ -10,6 +10,7 @@ class Footer extends Component {
         return (
             <div className='footer'>
                 <Logo />
+                <span className='copyright'>Copyright Miłosz Przybylski</span>
             </div>
         );
     }

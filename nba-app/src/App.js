@@ -3,12 +3,13 @@ import 'antd/dist/antd.css';
 import './App.scss';
 
 import LandingPage from './views/LandingPage';
-import Main from './views/Main';
 import PlayerStats from './views/PlayerStats';
 import Teams from './views/Teams';
 import GameStats from './views/GameStats';
 import TeamInfo from './views/TeamInfo';
 import NotFound from './views/NotFound';
+import PlayerSelect from './views/PlayerSelect';
+import RandomPlayers from './views/RandomPlayers';
 
 
 import {
@@ -27,11 +28,12 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path='/' component={LandingPage} />
-            <Route exact path='/main' component={Main} />
-            <Route exact path='/player' component={PlayerStats} />
+            <Route exact path='/playerStats' component={PlayerStats} />
             <Route exact path='/teams' component={Teams} />
-            <Route exact path='/game' component={GameStats} />
-            <Route exact path='/team' component={TeamInfo} />
+            <Route exact path='/gameStats' component={GameStats} />
+            <Route exact path='/teamInfo' component={TeamInfo} />
+            <Route exact path='/playerSelect' component={PlayerSelect} />
+            <Route exact path='/randomPlayers' component={RandomPlayers} />
             <Route component={NotFound} />
           </Switch>
         </Router>

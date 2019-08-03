@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 class GameStats extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
 
-        }
-    }
+
     render() {
         return (
-            <>
+            <div className='playerSelect'>
                 <Header />
-                <h1>Game Stats Page</h1>
-            </>
+                <span className='error'>Game Stats Page</span>
+                <span className='error'>In progress</span>
+                <Footer />
+            </div>
         );
     }
 }

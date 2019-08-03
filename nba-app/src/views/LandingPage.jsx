@@ -4,12 +4,12 @@ import { Redirect } from "react-router-dom";
 import Button from "../components/Button";
 import Input from '../components/Input';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 import Slider from "react-animated-slider";
 
 import lebronBg from '../assets/images/background/LebronJames.jpg';
 import lakersBg from '../assets/images/background/LosAngelesLakers.jpg';
+import Footer from '../components/Footer';
 
 class LandingPage extends Component {
     constructor(props) {
@@ -30,11 +30,11 @@ class LandingPage extends Component {
                     placeholder: `Type name of some team e.g. Los Angeles Lakers`,
                     buttonText: 'Search for team',
                     background: `url('${lakersBg}')`,
-                    inputName: 'teams',
+                    inputName: 'team',
                 },
             ],
             player: '',
-            teams: '',
+            team: '',
 
         }
     }
@@ -51,24 +51,24 @@ class LandingPage extends Component {
     }
 
     render() {
-        const { redirect, redirectId, teams, player, landingPageOptions } = this.state;
+        const { redirect, redirectId, team, player, landingPageOptions } = this.state;
 
         if (redirect && redirectId === 1) {
             if (player !== '') {
                 return <Redirect to={{
-                    pathname: './player',
-                    state: { searchQuery: this.state.teams }
+                    pathname: './playerStats',
+                    state: { searchQuery: this.state.player }
                 }}
                 />
             }
             return <Redirect to={{
-                pathname: './adsf',
+                pathname: './randomPlayers',
             }} />
         } else if (redirect && redirectId === 2) {
-            if (teams !== '') {
+            if (team !== '') {
                 return <Redirect to={{
-                    pathname: './team',
-                    state: { searchQuery: this.state.teams }
+                    pathname: './teamInfo',
+                    state: { searchQuery: this.state.team }
                 }}
                 />
             }
@@ -95,13 +95,11 @@ class LandingPage extends Component {
                                     value={this.state.inputValue}
                                     placeholder={e.placeholder} />
                                 <Button
-                                    className='landingPage__form-button'
+                                    className='button'
                                     buttonText={e.buttonText} />
                             </form>
                         </div>
-
                     ))}
-
                 </Slider>
                 <Footer />
             </>

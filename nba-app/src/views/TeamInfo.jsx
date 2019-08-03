@@ -2,44 +2,58 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import TeamComponent from '../components/TeamComponent';
 import Footer from '../components/Footer';
+
+import ReactLoading from "react-loading";
 import { Button, Icon } from 'antd';
 
 class TeamInfo extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
+        this.state = {
+            isloading: true,
+        }
+    }
 
-        this.state = {}
+    componentDidMount() {
+        this.setState({ isloading: false })
     }
     render() {
+
         if (this.props.location.state === undefined) {
             return (
                 <div className='teams'>
                     <Header />
-                    <span className='teams__error'>UPS! You didn`t pick up a team</span>
+                    <span className='error'>UPS! You didn`t pick up a team</span>
                     <Button
-                        ghost
+                        className='button'
                         size='large'
                         href='.#/teams'
-                        type="default">
+                    >
                         <Icon type="rollback" />
                         Go back to teams list!
                 </Button>
                     <Footer />
                 </div>
             )
-        } else {
+        } else if (this.state.isLoading && this.props.location.state.id !== undefined) {
+            return (
+                <div className='teams'>
+                    <Header />
+                    <ReactLoading type='spinningBubbles' />
+                    <Footer />
+                </div>
 
+            )
         }
         return (
-            <div className='teams'>
+            <div className='teams' >
                 <Header />
                 <TeamComponent id={this.props.location.state.id} />
                 <Button
-                    ghost
+                    className='button'
                     size='large'
                     href='#/teams'
-                    type="default">
+                >
                     <Icon type="rollback" />
                     Go back to teams list!
                 </Button>

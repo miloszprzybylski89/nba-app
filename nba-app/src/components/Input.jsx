@@ -5,7 +5,7 @@ class Input extends Component {
         super(props);
         this.state = {
             player: '',
-            teams: '',
+            team: '',
             placeholder: this.props.placeholder,
         };
     };

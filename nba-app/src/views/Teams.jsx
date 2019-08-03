@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { } from "react-router-dom";
+import ReactLoading from "react-loading";
 
 const API = 'https://www.balldontlie.io/api/v1/teams'
 
@@ -27,7 +27,7 @@ class TeamStats extends Component {
 
     handleChosenTeam = (id) => {
         this.props.history.push({
-            pathname: '/team',
+            pathname: '/teamInfo',
             state: { id: id }
         })
     }
@@ -38,9 +38,9 @@ class TeamStats extends Component {
             return (
                 <div className='teams'>
                     <Header />
+                    <ReactLoading type='spinningBubbles' />
 
                     <Footer />
-
                 </div>
             );
         }
@@ -49,16 +49,16 @@ class TeamStats extends Component {
             <div className='teams'>
                 <Header />
                 <ul className='teamsList'>
-                    {data.map(elem => (
+                    {data.map(element => (
                         <li
-                            onClick={() => this.handleChosenTeam(elem.id)}
-                            key={elem.id}
-                            index={elem.id}
-                            className='teamsList__element' ><span> {elem.full_name}</span> </li>
+                            onClick={() => this.handleChosenTeam(element.id)}
+                            key={element.id}
+                            index={element.id}
+                            className='teamsList__element' >{element.full_name}</li>
                     ))}
                 </ul>
-                <Footer />
 
+                <Footer />
             </div>
         );
     }

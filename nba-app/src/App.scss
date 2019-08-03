@@ -1,6 +1,8 @@
-@import "./scss/landingPage.scss";
-@import "./scss/teamStats.scss";
-@import "./scss/slider.scss";
+@import "./scss/landingPage";
+@import "./scss/teamStats";
+@import "./scss/slider";
+@import "./scss/playerComponent";
+@import "./scss/playerSelect";
 
 .App {
   background-color: black;
@@ -13,30 +15,45 @@
   align-items: center;
   width: 100%;
   min-height: 100vh;
+  height: 0;
   margin: auto;
   color: white;
 }
 
 .error {
   font-size: 3em;
-  color: white;
+  color: Black;
 }
 
 .header,
 .footer {
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.header {
+  top: 0;
+}
+
+.footer {
+  bottom: 0;
 }
 
 .logo {
   font-size: 2em;
   color: white;
-  margin-left: 1em;
+  padding-left: 1em;
   cursor: pointer;
+}
+
+.copyright {
+  margin-right: 2em;
+  font-size: 1em;
 }
 
 .navigation {
