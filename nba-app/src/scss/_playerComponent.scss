@@ -1,6 +1,9 @@
 .player {
   &Stats {
     background-image: url("./assets/images/background/players.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -9,7 +12,7 @@
   }
 
   &Component {
-    height: 500px;
+    height: 75vh;
     min-width: 1200px;
 
     &__inner {
@@ -58,6 +61,27 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+    width: 600px;
+
+    &-adv {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid darkgray;
+      border-left: 2px solid darkgrey;
+      border-radius: 0.5em;
+      padding: 0.1em;
+      margin: 0.25em;
+    }
+
+    &-title {
+      font-size: 3em;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__teamLogo {
@@ -69,13 +93,30 @@
 
   &__name {
     font-size: 4em;
+    border-bottom: 2px solid darkgray;
+    border-left: 2px solid darkgrey;
+    border-radius: 0.5em;
+    padding: 0.1em;
+    margin: 0.25em;
   }
   &__teamName {
     font-size: 3em;
+    border-bottom: 2px solid darkgray;
+    border-left: 2px solid darkgrey;
+    border-radius: 0.5em;
+    padding: 0.1em;
+    margin: 0.25em;
   }
 
   &__stats {
     font-size: 1.5em;
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
   }
 
   &Select {

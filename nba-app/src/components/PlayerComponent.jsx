@@ -40,32 +40,56 @@ class PlayerComponent extends Component {
                     </div>
                     <div className='playerComponent__inner-back'>
                         <div className='player__data'>
-                            <span className='player__stats'>Games played: {games_played}</span>
-                            <span className='player__stats'>Minutes in every match: {minutes_per_game}</span>
-                            <span className='player__stats'>Points per game: {points_per_game}</span>
-                            <div className='player__FG-container'>
-                                <span className='player__FG'>FG attempts: {field_goals_attempted_per_game}</span>
-                                <span className='player__FG'>FG success: {field_goals_made_per_game}</span>
-                                <span className='player__FG'>FG %: {field_goal_percentage}</span>
-                                <span className='player__FG'>Free throw percentage: {free_throw_percentage}</span>
+                            <div className='player__data-adv'>
+                                <span className='player__data-title'>Games data:</span>
+                                <div className='player__data-container'>
+                                    <span className='player__stats'>Games played: {games_played}</span>
+                                    <span className='player__stats'>Minutes in every match: {minutes_per_game}</span>
+                                    <span className='player__stats'>Points per game: {points_per_game}</span>
+                                </div>
                             </div>
-                            <div className='player__3P-container'>
-                                <span className='player__3P'>3P attempts: {three_point_attempted_per_game}</span>
-                                <span className='player__3P'>3P success: {three_point_made_per_game}</span>
-                                <span className='player__3P'>3P %: {three_point_percentage}</span>
+                            <div className='player__data-adv'>
+                                {/* <div className='player__stats-container'> */}
+                                <span className='player__data-title'>Field goals:</span>
+                                <div className='player__data-container'>
+                                    <span className='player__stats'>FG attempts: {field_goals_attempted_per_game}</span>
+                                    <span className='player__stats'>FG success: {field_goals_made_per_game}</span>
+                                    <span className='player__stats'>FG %: {field_goal_percentage}</span>
+                                    <span className='player__stats'>Free throw percentage: {free_throw_percentage}</span>
+                                    {/* </div> */}
+                                </div>
                             </div>
-                            <div className='player__reb-container'>
-                                <span className='player__reb'>Offensive Rebounds: {offensive_rebounds_per_game}</span>
-                                <span className='player__reb'>Defensive Rebounds: {defensive_rebounds_per_game}</span>
-                                <span className='player__reb'>Rebounds per game: {rebounds_per_game}</span>
+                            <div className='player__data-adv'>
+                                {/* <div className='player__stats-container'> */}
+                                <span className='player__data-title'>Three points:</span>
+                                <div className='player__data-container'>
+                                    <span className='player__stats'>3P attempts: {three_point_attempted_per_game}</span>
+                                    <span className='player__stats'>3P success: {three_point_made_per_game}</span>
+                                    <span className='player__stats'>3P %: {three_point_percentage}</span>
+                                </div>
                             </div>
-                            <div className='player__stats-container'>
-                                <span className='player__stats'>Assists per game: {assists_per_game}</span>
-                                <span className='player__stats'>Steals per game: {steals_per_game}</span>
-                                <span className='player__stats'>Blocks per game: {blocks_per_game}</span>
-                                <span className='player__stats'>Turnovers per game: {turnovers_per_game}</span>
+                            <div className='player__data-adv'>
+                                {/* <div className='player__stats-container'> */}
+                                <span className='player__data-title'>Rebounds:</span>
+                                <div className='player__data-container'>
+                                    <span className='player__stats'>Offensive Rebounds: {offensive_rebounds_per_game}</span>
+                                    <span className='player__stats'>Defensive Rebounds: {defensive_rebounds_per_game}</span>
+                                    <span className='player__stats'>Rebounds per game: {rebounds_per_game}</span>
+                                </div>
                             </div>
-                            <span className='player__efficency'>Efficency rating: {player_efficiency_rating}</span>
+                            <div className='player__data-adv'>
+                                {/* <div className='player__stats-container'> */}
+                                <span className='player__data-title'>Stats per game:</span>
+                                <div className='player__data-container'>
+                                    <span className='player__stats'>Assists per game: {assists_per_game}</span>
+                                    <span className='player__stats'>Steals per game: {steals_per_game}</span>
+                                    <span className='player__stats'>Blocks per game: {blocks_per_game}</span>
+                                    <span className='player__stats'>Turnovers per game: {turnovers_per_game}</span>
+                                </div>
+                            </div>
+                            <div className='player__data-adv'>
+                                <span className='player__data-title'>Efficency rating: {player_efficiency_rating}</span>
+                            </div>
                         </div>
                         <ImgInBg
                             className='player__headshot'

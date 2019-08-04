@@ -38,10 +38,12 @@ class TeamComponent extends Component {
                         src={backgroundImage}
                         renderLoader={() => <Spinner />} />
                     <span className='teamComponent__teamName'>{this.state.data.full_name}</span>
-                    <span className='teamComponent__info'>From: {this.state.data.city}</span>
-                    <span className='teamComponent__info'>Conference: {this.state.data.conference}</span>
-                    <span className='teamComponent__info'>Division: {this.state.data.division}</span>
-                    <span className='teamComponent__abbreviation'>Abbreviation: {this.state.data.abbreviation}</span>
+                    <div className='teamComponent__info-container'>
+                        <span className='teamComponent__info'>From: {this.state.data.city}</span>
+                        <span className='teamComponent__info'>Conference: {this.state.data.conference}</span>
+                        <span className='teamComponent__info'>Division: {this.state.data.division}</span>
+                    </div>
+                    <span className='teamComponent__abbreviation'>Acronym: {this.state.data.abbreviation}</span>
                 </div>
             );
 

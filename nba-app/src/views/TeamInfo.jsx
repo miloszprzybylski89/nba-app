@@ -48,7 +48,8 @@ class TeamInfo extends Component {
         return (
             <div className='teams' >
                 <Header />
-                <TeamComponent id={this.props.location.state.id} />
+                <TeamComponent id={this.props.location.state.id}
+                />
                 <Button
                     className='button'
                     size='large'

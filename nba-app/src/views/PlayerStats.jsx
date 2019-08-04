@@ -98,7 +98,7 @@ class PlayerStats extends Component {
                 )
             }
             return (
-                <div className='playerSelect'>
+                <div className='playerStats'>
                     <Header />
                     <span className='error'>Pick up a player</span>
                     <ul className='playerSelect__list'>

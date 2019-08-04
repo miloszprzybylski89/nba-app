@@ -67,7 +67,7 @@ class LandingPage extends Component {
         } else if (redirect && redirectId === 2) {
             if (team !== '') {
                 return <Redirect to={{
-                    pathname: './teamInfo',
+                    pathname: './teams',
                     state: { searchQuery: this.state.team }
                 }}
                 />
